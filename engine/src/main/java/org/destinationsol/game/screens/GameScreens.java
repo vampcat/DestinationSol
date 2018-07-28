@@ -27,6 +27,7 @@ public class GameScreens {
     public final InventoryScreen inventoryScreen;
     public final TalkScreen talkScreen;
     public final Console console;
+    public final InteriorScreen interiorScreen;
 
     public GameScreens(float r, SolApplication cmp, Context context) {
         SolLayouts layouts = cmp.getLayouts();
@@ -37,6 +38,7 @@ public class GameScreens {
         inventoryScreen = new InventoryScreen(r, cmp.getOptions());
         talkScreen = new TalkScreen(layouts.menuLayout, cmp.getOptions());
         console = Console.getInstance();
+        interiorScreen = new InteriorScreen();
     }
 
 }
