@@ -33,7 +33,7 @@ public class ShipInterior {
     private final TextureAtlas.AtlasRegion bg2;
 
     public ShipInterior() {
-        frameBuffer = new FrameBuffer(Pixmap.Format.RGB565, 1000, 1000, false);
+        frameBuffer = new FrameBuffer(Pixmap.Format.RGBA4444, 1000, 1000, false);
         textureRegion = new TextureRegion(frameBuffer.getColorBufferTexture());
         textureRegion.flip(false, true);
         bg = Assets.getAtlasRegion("core:imperialSmallInterior");
@@ -44,7 +44,7 @@ public class ShipInterior {
     public TextureRegion render() {
         frameBuffer.begin();
 //        Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_ALPHA_BITS);
         spriteBatch.begin();
 //        spriteBatch.draw(bg2, 0, 0, 1000, 1000);
         spriteBatch.draw(bg, 0, 0, 1000, 1000);
